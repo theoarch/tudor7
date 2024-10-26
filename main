@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            font-family: 'Comfortaa', cursive;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-top: 0;
+        }
+
+        .about-section {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.5em;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Name</h1>
+    
+    <div class="about-section">
+        <h2>About Me</h2>
+        <p>Welcome to my personal website! Feel free to connect with me on social media:</p>
+        <div class="social-links">
+            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+            <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+        </div>
+    </div>
+</body>
+</html>
