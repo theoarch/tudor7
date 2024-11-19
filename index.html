@@ -3,118 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tudor7</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Basic Styling */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Comfortaa', cursive;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Background Image and Overlay */
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('ales-krivec-6UvCwtfv-lg-unsplash.jpg'); /* Replace with your image URL */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: -2;
-        }
-
-        /* Semi-transparent overlay */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Darkens the background to improve visibility */
-            z-index: -1;
-        }
-
-        /* Text Styling */
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            margin-top: 0;
-            z-index: 1;
-        }
-
-        .about-section {
-            margin-top: 50px;
-            text-align: center;
-            z-index: 1;
-        }
-
-        /* Refined Animated Buttons */
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.5em;
-            padding: 10px 30px;
-            border: 2px solid white;
-            border-radius: 50px;
-            transition: all 0.3s ease-in-out;
-            position: relative;
-            display: inline-block;
-            overflow: hidden;
-        }
-
-        /* Button Hover Effect */
-        .social-links a:hover {
-            background-color: white;
-            color: black;
-            border-color: white;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Glowing effect */
-            transform: scale(1.1); /* Slight scaling effect */
-        }
-
-        /* Cool Hover Animation */
-        .social-links a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.4s ease-in-out;
-        }
-
-        .social-links a:hover::before {
-            left: 100%;
-        }
-    </style>
+    <meta name="description" content="Personal Website of [Your Name]">
+    <title>[Your Name] - Personal Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background"></div>
-    <div class="overlay"></div>
+    <header>
+        <nav>
+            <div class="logo">[Your Name]</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <h1>Timb Tudor</h1>
-    
-    <div class="about-section">
+    <section id="hero">
+        <h1>Welcome to My Website</h1>
+        <p>Your tagline or brief introduction goes here.</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </section>
+
+    <section id="about">
         <h2>About Me</h2>
-        <p>Welcome to my personal website! Feel free to connect with me on social media:</p>
-        <div class="social-links">
-            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
-            <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+        <p>Write about yourself here: your background, interests, and what you do.</p>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Short description of the project.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Short description of the project.</p>
+            </div>
+            <!-- Add more items as needed -->
         </div>
-    </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+    </footer>
 </body>
 </html>
