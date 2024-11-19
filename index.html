@@ -8,55 +8,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="background-overlay"></div>
+
+    <!-- Header Section -->
     <header>
-        <nav>
-            <div class="logo">[Your Name]</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>[Your Name]</h1>
     </header>
 
+    <!-- Hero Section -->
     <section id="hero">
-        <h1>Welcome to My Website</h1>
-        <p>Your tagline or brief introduction goes here.</p>
-        <a href="#contact" class="btn">Get in Touch</a>
-    </section>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Write about yourself here: your background, interests, and what you do.</p>
-    </section>
-
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="project1.jpg" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Short description of the project.</p>
+        <div class="hero-content">
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="About Me Video"
+                    frameborder="0"
+                    allowfullscreen
+                ></iframe>
             </div>
-            <div class="portfolio-item">
-                <img src="project2.jpg" alt="Project 2">
-                <h3>Project 2</h3>
-                <p>Short description of the project.</p>
+            <div class="about-me">
+                <h2>About Me</h2>
+                <p>Hi, I’m [Your Name]. This is where you can add a brief introduction about yourself: your passions, work, or hobbies.</p>
             </div>
-            <!-- Add more items as needed -->
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/your-form-id" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+    <!-- Social Media Section -->
+    <section id="social-media">
+        <h2>Connect with Me</h2>
+        <div class="social-links">
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 [Your Name]. All rights reserved.</p>
     </footer>
