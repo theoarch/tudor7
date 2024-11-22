@@ -5,18 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Life</title>
     <style>
-        /* General Styles */
+        /* Base styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            color: #fff;
-            background-image: url('background.jpg'); /* Replace with your desired background image */
+            color: white;
+            background: url('background.jpg') no-repeat center center fixed; /* Replace with your image */
             background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
         }
 
-        /* Overlay effect for darkness */
+        /* Overlay for text visibility */
         body::before {
             content: '';
             position: absolute;
@@ -24,131 +22,185 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8); /* Dark overlay */
             z-index: -1;
         }
 
+        /* Header styles */
         header {
-            background-color: black;
-            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px;
+            background: black;
             position: sticky;
             top: 0;
-            z-index: 1;
+            z-index: 10;
         }
 
         .logo {
-            font-size: 1.5em;
+            font-size: 1.8em;
             font-weight: bold;
-            white-space: nowrap;
+            color: #ff0000;
+            text-transform: uppercase;
         }
 
-        .nav-buttons {
+        nav {
             display: flex;
-            justify-content: flex-end;
+            gap: 15px;
         }
 
-        .nav-buttons a {
+        nav a {
             text-decoration: none;
             color: white;
-            background: #ff0000; /* Pure red */
-            border: 2px solid #ff0000;
-            border-radius: 5px;
-            padding: 10px 15px;
-            margin-left: 10px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .nav-buttons a:hover {
-            background: #900000; /* Darker red for hover */
-            color: white;
-            transform: scale(1.1);
-        }
-
-        /* Mobile Menu Button */
-        .menu-button {
-            display: none; /* Hidden by default on desktop */
             background: #ff0000;
-            color: white;
-            border: none;
-            border-radius: 5px;
             padding: 10px 15px;
-            font-size: 1em;
+            border-radius: 5px;
             font-weight: bold;
-            cursor: pointer;
+            transition: background 0.3s;
         }
 
-        .menu-button:hover {
-            background: #900000;
+        nav a:hover {
+            background: #900000; /* Darker red for hover */
         }
 
-        .mobile-nav {
-            display: none; /* Hidden by default */
+        /* Hero section */
+        .hero {
+            display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .mobile-nav a {
-            width: 100%;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 10px;
+            height: 80vh;
+            padding: 0 20px;
         }
 
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .nav-buttons {
-                display: none; /* Hide the full navigation bar on mobile */
+        .hero h1 {
+            font-size: 3em;
+            margin: 0 0 20px;
+            color: #ff4500; /* Fire orange for hero text */
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        /* Sections */
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ff0000;
+        }
+
+        section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: black;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ff4500;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
             }
 
-            .menu-button {
-                display: block; /* Show the menu button on mobile */
+            .hero h1 {
+                font-size: 2.5em;
             }
 
-            .mobile-nav {
-                display: flex; /* Reveal the dropdown menu when triggered */
+            .hero p {
+                font-size: 1em;
             }
         }
     </style>
-    <script>
-        function toggleMenu() {
-            const mobileNav = document.querySelector('.mobile-nav');
-            mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
-        }
-    </script>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="logo">My Life</div>
-        <button class="menu-button" onclick="toggleMenu()">Menu</button>
-        <div class="nav-buttons">
+        <nav>
             <a href="#about">About Me</a>
             <a href="#journey">My Journey</a>
             <a href="#gallery">Gallery</a>
             <a href="#contact">Contact</a>
-        </div>
-        <div class="mobile-nav">
-            <a href="#about">About Me</a>
-            <a href="#journey">My Journey</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact</a>
-        </div>
+        </nav>
     </header>
 
-    <div class="content">
+    <!-- Hero Section -->
+    <div class="hero">
         <h1>Welcome to My Life</h1>
-        <p>Here is where I document my life's journey, memories, and experiences.</p>
+        <p>A journey through my memories, passions, and experiences.</p>
     </div>
 
-    <footer class="social-buttons" style="text-align:center; margin-bottom: 20px;">
-        <a href="https://twitter.com" target="_blank">🐦</a>
-        <a href="https://facebook.com" target="_blank">📘</a>
-        <a href="https://instagram.com" target="_blank">📸</a>
-        <a href="https://linkedin.com" target="_blank">🔗</a>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm [Your Name], and this is where I share my life's story. From my hobbies to my adventures, this is my personal space to document it all.
+        </p>
+    </section>
+
+    <!-- My Journey Section -->
+    <section id="journey">
+        <h2>My Journey</h2>
+        <p>
+            From humble beginnings to exciting milestones, my journey has been one of growth, challenges, and unforgettable experiences. Explore the moments that shaped me.
+        </p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <p>
+            A picture is worth a thousand words. Here are some glimpses into my life through a curated gallery of my favorite memories.
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>
+            Let's connect! Reach out to me on my social platforms below.
+        </p>
+        <div class="social-icons">
+            <a href="https://twitter.com" target="_blank">🐦</a>
+            <a href="https://facebook.com" target="_blank">📘</a>
+            <a href="https://instagram.com" target="_blank">📸</a>
+            <a href="https://linkedin.com" target="_blank">🔗</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 My Life. All rights reserved.</p>
     </footer>
 </body>
 </html>
