@@ -3,118 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tudor7</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>My Life</title>
     <style>
-        /* Basic Styling */
         body {
             margin: 0;
-            padding: 0;
-            font-family: 'Comfortaa', cursive;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Background Image and Overlay */
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('ales-krivec-6UvCwtfv-lg-unsplash.jpg'); /* Replace with your image URL */
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-image: url('background.jpg'); /* Replace 'background.jpg' with your desired background image */
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            z-index: -2;
+            background-attachment: fixed;
         }
 
-        /* Semi-transparent overlay */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Darkens the background to improve visibility */
-            z-index: -1;
-        }
-
-        /* Text Styling */
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            margin-top: 0;
-            z-index: 1;
-        }
-
-        .about-section {
-            margin-top: 50px;
-            text-align: center;
-            z-index: 1;
-        }
-
-        /* Refined Animated Buttons */
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.5em;
-            padding: 10px 30px;
-            border: 2px solid white;
-            border-radius: 50px;
-            transition: all 0.3s ease-in-out;
-            position: relative;
-            display: inline-block;
-            overflow: hidden;
-        }
-
-        /* Button Hover Effect */
-        .social-links a:hover {
-            background-color: white;
-            color: black;
-            border-color: white;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Glowing effect */
-            transform: scale(1.1); /* Slight scaling effect */
-        }
-
-        /* Cool Hover Animation */
-        .social-links a::before {
+        /* Overlay effect for darkness */
+        body::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.4s ease-in-out;
+            background: rgba(0, 0, 0, 0.7); /* Adjust the opacity for more or less darkness */
+            z-index: -1;
         }
 
-        .social-links a:hover::before {
-            left: 100%;
+        header {
+            background-color: black;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(90deg, #ff4b1f, #ff9068); /* Fire gradient effect */
+            border: 2px solid #ff4b1f;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-left: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons a:hover {
+            background: #ff4b1f;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .social-buttons a {
+            text-decoration: none;
+            margin: 5px;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .social-buttons a:hover {
+            color: #ff4b1f;
         }
     </style>
 </head>
 <body>
-    <div class="background"></div>
-    <div class="overlay"></div>
-
-    <h1>Timb Tudor</h1>
-    
-    <div class="about-section">
-        <h2>About Me</h2>
-        <p>Welcome to my personal website! Feel free to connect with me on social media:</p>
-        <div class="social-links">
-            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
-            <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+    <header>
+        <div class="logo">My Life</div>
+        <div class="nav-buttons">
+            <a href="#about">About Me</a>
+            <a href="#journey">My Journey</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
         </div>
+    </header>
+
+    <div class="content">
+        <h1>Welcome to My Life</h1>
+        <p>Here is where I document my life's journey, memories, and experiences.</p>
     </div>
+
+    <footer class="social-buttons" style="text-align:center; margin-bottom: 20px;">
+        <a href="https://twitter.com" target="_blank">🐦</a>
+        <a href="https://facebook.com" target="_blank">📘</a>
+        <a href="https://instagram.com" target="_blank">📸</a>
+        <a href="https://linkedin.com" target="_blank">🔗</a>
+    </footer>
 </body>
 </html>
