@@ -34,7 +34,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
             position: sticky;
             top: 0;
             z-index: 1;
@@ -44,15 +43,11 @@
             font-size: 1.5em;
             font-weight: bold;
             white-space: nowrap;
-            flex: 1;
         }
 
         .nav-buttons {
             display: flex;
-            flex-wrap: wrap;
             justify-content: flex-end;
-            gap: 10px; /* Adds consistent spacing between buttons */
-            flex: 2;
         }
 
         .nav-buttons a {
@@ -62,10 +57,9 @@
             border: 2px solid #ff0000;
             border-radius: 5px;
             padding: 10px 15px;
+            margin-left: 10px;
             font-weight: bold;
             transition: all 0.3s ease;
-            text-align: center;
-            flex: 1 0 30%; /* Ensures buttons adapt to the screen width */
         }
 
         .nav-buttons a:hover {
@@ -74,67 +68,70 @@
             transform: scale(1.1);
         }
 
-        .content {
-            max-width: 800px;
-            margin: 50px auto;
-            text-align: center;
-            padding: 0 15px;
-        }
-
-        .social-buttons a {
-            text-decoration: none;
-            margin: 5px;
+        /* Mobile Menu Button */
+        .menu-button {
+            display: none; /* Hidden by default on desktop */
+            background: #ff0000;
             color: white;
-            font-size: 1.5em;
-            transition: color 0.3s ease;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
         }
 
-        .social-buttons a:hover {
-            color: #ff0000;
+        .menu-button:hover {
+            background: #900000;
         }
 
-        footer {
+        .mobile-nav {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .mobile-nav a {
+            width: 100%;
             text-align: center;
-            margin: 20px 0;
+            padding: 10px;
         }
 
         /* Responsive Design */
         @media screen and (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-
             .nav-buttons {
-                justify-content: center;
+                display: none; /* Hide the full navigation bar on mobile */
             }
 
-            .nav-buttons a {
-                flex: 1 0 80%; /* Buttons take up most of the width on smaller screens */
-                margin-bottom: 10px; /* Adds spacing between rows */
+            .menu-button {
+                display: block; /* Show the menu button on mobile */
             }
 
-            .logo {
-                text-align: center;
-                margin-bottom: 10px;
-            }
-
-            .content {
-                font-size: 1rem;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .nav-buttons a {
-                flex: 1 0 100%; /* Buttons are full-width on very small screens */
+            .mobile-nav {
+                display: flex; /* Reveal the dropdown menu when triggered */
             }
         }
     </style>
+    <script>
+        function toggleMenu() {
+            const mobileNav = document.querySelector('.mobile-nav');
+            mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </head>
 <body>
     <header>
         <div class="logo">My Life</div>
+        <button class="menu-button" onclick="toggleMenu()">Menu</button>
         <div class="nav-buttons">
+            <a href="#about">About Me</a>
+            <a href="#journey">My Journey</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="mobile-nav">
             <a href="#about">About Me</a>
             <a href="#journey">My Journey</a>
             <a href="#gallery">Gallery</a>
@@ -147,7 +144,7 @@
         <p>Here is where I document my life's journey, memories, and experiences.</p>
     </div>
 
-    <footer class="social-buttons">
+    <footer class="social-buttons" style="text-align:center; margin-bottom: 20px;">
         <a href="https://twitter.com" target="_blank">🐦</a>
         <a href="https://facebook.com" target="_blank">📘</a>
         <a href="https://instagram.com" target="_blank">📸</a>
