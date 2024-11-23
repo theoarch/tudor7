@@ -42,11 +42,23 @@
             z-index: 100;
         }
 
-        /* Logo as an icon */
+        /* Logo and Name */
+        .navbar .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .navbar .logo {
             width: 40px;
             height: 40px;
             background: url('logo-icon.png') center/cover no-repeat;
+        }
+
+        .navbar .name {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
         }
 
         /* Navigation buttons styled as red buttons */
@@ -170,7 +182,11 @@
 
     <!-- Navbar -->
     <div class="navbar">
-        <div class="logo"></div> <!-- Logo as an icon -->
+        <!-- Logo and Name -->
+        <div class="logo-container">
+            <div class="logo"></div> <!-- Logo as an icon -->
+            <div class="name">My Name</div> <!-- Name -->
+        </div>
         <div class="menu">
             <a href="#about">About</a>
             <a href="#journey">Journey</a>
