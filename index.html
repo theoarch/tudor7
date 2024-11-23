@@ -5,118 +5,185 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Life</title>
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            background: url('background-image.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            overflow: hidden;
+            box-sizing: border-box;
         }
 
-        /* Dark overlay for readability */
-        body::before {
-            content: '';
-            position: absolute;
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        /* Background with darkness effect */
+        .background {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: url('background-image.jpg') center/cover no-repeat;
+            filter: brightness(0.4); /* Darken the background */
             z-index: -1;
         }
 
-        header {
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: black;
+            z-index: 100;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Hamburger Menu for Mobile */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+        }
+
+        .navbar .menu-mobile {
+            display: none;
+            flex-direction: column;
+            background: black;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            padding: 10px;
+        }
+
+        .navbar .menu-mobile a {
+            padding: 10px 0;
+            border-bottom: 1px solid white;
+        }
+
+        /* Content Section */
+        .content {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
             text-align: center;
+            width: 80%;
+        }
+
+        .content h1 {
+            font-size: 48px;
             margin-bottom: 20px;
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            color: red;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            margin-top: 5px;
-            color: white;
-        }
-
-        section {
-            text-align: center;
-            max-width: 600px;
-        }
-
-        section h2 {
-            color: red;
-            margin-bottom: 10px;
-        }
-
-        section p {
+        .content p {
+            font-size: 20px;
             line-height: 1.5;
-            color: white;
         }
 
-        footer {
-            margin-top: 20px;
+        /* Social Media Links */
+        .social-media {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
-        footer a {
-            margin: 0 10px;
-            color: red;
+        .social-media a {
             text-decoration: none;
-            font-size: 1.2rem;
+            color: white;
+            font-size: 24px;
             transition: color 0.3s;
         }
 
-        footer a:hover {
-            color: white;
+        .social-media a:hover {
+            color: #00acee; /* Example: Twitter color */
         }
 
+        /* Responsive Styles */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
+            .navbar .menu {
+                display: none;
             }
 
-            section h2 {
-                font-size: 1.5rem;
+            .hamburger {
+                display: flex;
             }
 
-            section p {
-                font-size: 1rem;
-            }
-
-            footer a {
-                font-size: 1rem;
+            .navbar.active .menu-mobile {
+                display: flex;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">My Name & Logo</div>
+        <div class="menu">
+            <a href="#about">About</a>
+            <a href="#journey">Journey</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu-mobile">
+            <a href="#about">About</a>
+            <a href="#journey">Journey</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
         <h1>Welcome to My Life</h1>
-        <p>Documenting my journey, passions, and connections.</p>
-    </header>
-    <section>
-        <h2>About Me</h2>
-        <p>
-            Hello! My name is [Your Name]. This is a digital reflection of my life,
-            filled with memories, achievements, and aspirations. Explore my journey
-            and feel free to connect with me below.
-        </p>
-    </section>
-    <footer>
-        <a href="https://twitter.com" target="_blank">Twitter</a>
-        <a href="https://github.com" target="_blank">GitHub</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-    </footer>
+        <p>Documenting the journey, experiences, and milestones of my life. Feel free to explore and connect with me!</p>
+        <div class="social-media">
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
